@@ -120,8 +120,10 @@ def do_create(self, arg):
     argl = parse(arg)
     if len(argl) == 0:
         print("** class name missing **")
-    elif argl[0] not in HBNBCommand.__classes:
+        return False
+    elif argl[0] not in classes:
         print("** class doesn't exist **")
+        return False
     else:
         print(eval(argl[0])().id)
         storage.save()
@@ -145,7 +147,7 @@ def do_create(self, arg):
             print("** class name missing **")
             return
 
-        if c_name not in HBNBCommand.classes:
+        if c_name not in classes:
             print("** class doesn't exist **")
             return
 
