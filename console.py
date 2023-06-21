@@ -121,7 +121,7 @@ def do_create(self, arg):
     if len(argl) == 0:
         print("** class name missing **")
         return False
-    elif argl[0] not in classes:
+    elif argl[0] not in HBNBCommand.__classes:
         print("** class doesn't exist **")
         return False
     else:
@@ -147,7 +147,7 @@ def do_create(self, arg):
             print("** class name missing **")
             return
 
-        if c_name not in classes:
+        if c_name not in HBNBCommand.classes:
             print("** class doesn't exist **")
             return
 
